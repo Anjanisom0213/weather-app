@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 import requests
@@ -29,7 +30,8 @@ def handle_weather_request(city):
     print("📦 Response Code:", response.status_code)
     print("📄 Response Body:", response.text)
 
-    # if response.status_code == 200:
+
+   # if response.status_code == 200:
     #     data = response.json()
     #     emit('weather_response', {
     #         'temperature': data['main']['temp'],
@@ -40,6 +42,7 @@ def handle_weather_request(city):
     #     emit('weather_response', {
     #         'error': 'City not found or API error.'
     #     })
+    
 
     if response.status_code == 200:
         data = response.json()
@@ -52,6 +55,7 @@ def handle_weather_request(city):
         #     'pressure': data['main']['pressure'],
         #     'city': data['name']
         # }
+        
 
         weather_info = {
               'temperature': data['main']['temp'],
@@ -79,4 +83,5 @@ def handle_weather_request(city):
         })
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True)
+    socketio.run(app, debug=True, host='0.0.0.0', port=5000)
+

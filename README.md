@@ -1,4 +1,4 @@
-🌦 Weather App – DevOps Enabled Deployment
+# Weather App – DevOps Enabled Deployment
 A full-stack Python-based weather forecasting app deployed using Docker, Kubernetes, CI/CD (GitHub Actions), and Argo CD. Built to demonstrate production-ready DevOps practices and seamless cloud deployment.
 
 📁 Project Structure
